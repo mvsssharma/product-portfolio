@@ -96,6 +96,31 @@
     }
     .live-link:hover { opacity: 0.9; }
     
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #10b981;
+      border-radius: 50%;
+      display: inline-block;
+      position: relative;
+    }
+    .status-dot::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: inherit;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+      top: 0;
+      left: 0;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.8; }
+      70% { transform: scale(3); opacity: 0; }
+      100% { transform: scale(3); opacity: 0; }
+    }
+    
     section { margin-bottom: 48px; }
     h2 {
       font-size: 12px;
@@ -161,6 +186,7 @@
       <p class="tagline">India's most trusted home buying platform</p>
       <div class="project-meta">
         <a href="https://trukeys.com" target="_blank" rel="noopener noreferrer" class="live-link">
+          <span class="status-dot"></span>
           Visit Live Site
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
         </a>
