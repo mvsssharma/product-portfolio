@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Srikanth Sharma — Product Portfolio</title>
+  <meta name="description" content="Product Manager with 12+ years of experience. Products I've conceived, designed, and shipped — from SaaS tools to AI-powered applications." />
+  <meta property="og:title" content="Srikanth Sharma — Product Portfolio" />
+  <meta property="og:description" content="Product Manager with 12+ years across Mobility, E-commerce, Ed-tech, Ad-tech, Fintech & Logistics. Here are the products I've built on the side." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0a0a0b;
+      --surface: rgba(255,255,255,0.03);
+      --surface-hover: rgba(255,255,255,0.05);
+      --border: rgba(255,255,255,0.06);
+      --border-hover: rgba(255,255,255,0.12);
+      --text: #ffffff;
+      --text-secondary: #a1a1aa;
+      --text-muted: #71717a;
+      --text-dim: #52525b;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    .glow {
+      position: fixed;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 600px;
+      background: radial-gradient(ellipse, rgba(99,102,241,0.07) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ---- Header ---- */
+    header { padding: 80px 0 48px; text-align: center; }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 9999px;
+      padding: 6px 16px;
+      margin-bottom: 32px;
+    }
+    .badge svg { opacity: 0.7; }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      background: linear-gradient(to bottom, #fff, #a1a1aa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+    }
+
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      max-width: 600px;
+      margin: 0 auto 32px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.02);
+      transition: all 0.2s;
+    }
+    .social-link:hover {
+      color: var(--text);
+      border-color: var(--border-hover);
+      background: var(--surface-hover);
+    }
+
+    /* ---- About section ---- */
+    .about-section {
+      padding: 0 0 64px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .about-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 32px;
+    }
+
+    .about-card-label {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 16px;
+    }
+
+    .about-card p {
+      color: var(--text-secondary);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .highlight-row {
+      display: flex;
+      gap: 24px;
+    }
+
+    .highlight-item {
+      flex: 1;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 28px;
+      text-align: center;
+    }
+
+    .highlight-number {
+      font-size: 1.8rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 4px;
+    }
+
+    .highlight-label {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .domain-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .domain-tag {
+      font-size: 12px;
+      padding: 5px 12px;
+      border-radius: 8px;
+      background: rgba(99,102,241,0.08);
+      color: #a5b4fc;
+      border: 1px solid rgba(99,102,241,0.15);
+    }
+
+    .activity-list {
+      list-style: none;
+    }
+
+    .activity-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: var(--text-secondary);
+      font-size: 14px;
+      padding: 5px 0;
+      line-height: 1.5;
+    }
+
+    .activity-list li svg { flex-shrink: 0; margin-top: 3px; }
+
+    .podcast-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      color: #a5b4fc;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 12px;
+      padding: 3px 10px;
+      border-radius: 6px;
+      background: rgba(99,102,241,0.1);
+      border: 1px solid rgba(99,102,241,0.2);
+      transition: all 0.2s;
+      white-space: nowrap;
+      vertical-align: middle;
+    }
+    .podcast-link:hover { color: #c4b5fd; background: rgba(99,102,241,0.15); }
+
+    .career-timeline {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .career-timeline-label {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+
+    .career-step {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      padding: 3px 0;
+    }
+
+    .career-step .company {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .career-step .period {
+      color: var(--text-muted);
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    .cert-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .cert-tag {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: rgba(245,158,11,0.08);
+      color: #fbbf24;
+      border: 1px solid rgba(245,158,11,0.15);
+    }
+
+    /* ---- Demo credentials ---- */
+    .demo-creds {
+      margin-top: 16px;
+      padding: 12px 16px;
+      border-radius: 8px;
+      background: rgba(245,158,11,0.06);
+      border: 1px solid rgba(245,158,11,0.12);
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .demo-creds-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #fbbf24;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+
+    .demo-creds code {
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 12px;
+      color: var(--text);
+      background: rgba(255,255,255,0.06);
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+
+    /* ---- Career path (full-width, single column) ---- */
+    .career-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .career-entry {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .career-entry:last-child { border-bottom: none; padding-bottom: 0; }
+    .career-entry:first-child { padding-top: 0; }
+
+    .career-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+
+    .career-info { flex: 1; min-width: 0; }
+
+    .career-role {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .career-company-h {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+
+    .career-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .career-period-h {
+      font-size: 12px;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .career-tags-row {
+      display: flex;
+      gap: 6px;
+    }
+
+    .career-industry-tag {
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: rgba(99,102,241,0.08);
+      color: #a5b4fc;
+      border: 1px solid rgba(99,102,241,0.15);
+      white-space: nowrap;
+      line-height: 1.4;
+    }
+
+    /* ---- Skills section ---- */
+    .skills-section { padding-bottom: 80px; }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .skill-category {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 28px;
+    }
+
+    .skill-category-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .skill-tag {
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.04);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+    }
+
+    @media (max-width: 720px) {
+      .skills-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ---- Section header ---- */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+
+    .section-header h2 {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      white-space: nowrap;
+    }
+
+    .section-header .line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ---- Project grid ---- */
+    .projects { padding-bottom: 80px; }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    /* ---- Project card ---- */
+    .card {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      transition: all 0.4s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      opacity: 0;
+      transition: opacity 0.5s;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .card:hover { border-color: var(--border-hover); background: var(--surface-hover); }
+    .card:hover::before { opacity: 1; }
+    .card > * { position: relative; z-index: 1; }
+
+    .card[data-color="indigo"]::before { background: radial-gradient(600px circle at 50% 0%, rgba(99,102,241,0.06), transparent 60%); }
+    .card[data-color="emerald"]::before { background: radial-gradient(600px circle at 50% 0%, rgba(16,185,129,0.06), transparent 60%); }
+    .card[data-color="amber"]::before { background: radial-gradient(600px circle at 50% 0%, rgba(245,158,11,0.06), transparent 60%); }
+    .card[data-color="blue"]::before { background: radial-gradient(600px circle at 50% 0%, rgba(59,130,246,0.06), transparent 60%); }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    .card-title-group { display: flex; align-items: center; gap: 14px; }
+    .card-icon { font-size: 28px; }
+
+    .card-name {
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .card-tagline {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+
+    .live-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      padding: 5px 12px;
+      border-radius: 9999px;
+      border: 1px solid rgba(255,255,255,0.1);
+      text-decoration: none;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .live-badge:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
+
+    .card-desc {
+      color: var(--text-secondary);
+      font-size: 14px;
+      line-height: 1.65;
+      margin-bottom: 24px;
+      flex-grow: 1;
+    }
+
+    .card-section-label {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+
+    .features { margin-bottom: 16px; }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      padding: 3px 0;
+    }
+    .feature-item svg { flex-shrink: 0; margin-top: 3px; }
+
+    .tech-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+    .tech-tag {
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.04);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+    }
+
+    /* ---- Footer ---- */
+    footer { border-top: 1px solid var(--border); padding: 32px 0; }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-inner span {
+      font-size: 12px;
+      color: var(--text-dim);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    @media (max-width: 720px) {
+      .project-grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; }
+      .highlight-row { flex-direction: column; }
+      header { padding: 60px 0 40px; }
+      .career-entry { flex-wrap: wrap; }
+      .career-right { align-items: flex-start; flex-direction: row; gap: 10px; width: 100%; margin-top: 4px; padding-left: 26px; }
+    }
+
+    @media (max-width: 480px) {
+      .footer-inner { flex-direction: column; gap: 8px; }
+      .card { padding: 24px; }
+      .about-card { padding: 20px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="glow"></div>
+
+<div class="container">
+
+  <!-- Header -->
+  <header>
+    <div class="badge">
+      <!-- target icon -->
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+      Product Manager
+    </div>
+    <h1>Srikanth Sharma</h1>
+    <p class="subtitle">AI-native Product Leader with 12+ years shipping B2C &amp; B2B products across E-commerce, Ed-tech, Mobility, Fintech &amp; Logistics. Hands-on with conversational AI, LLMs, and recommender systems. I also build my own products from scratch — here's what I've shipped.</p>
+    <div class="social-links">
+      <a href="https://github.com/mvsssharma" target="_blank" rel="noopener noreferrer" class="social-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        GitHub
+      </a>
+      <a href="https://linkedin.com/in/sharmamvss" target="_blank" rel="noopener noreferrer" class="social-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://youtu.be/pbg7DZrkUK4?si=tid_ORBMIVOASHDm" target="_blank" rel="noopener noreferrer" class="social-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        Podcast
+      </a>
+      <a href="mailto:sharmamvss@gmail.com" class="social-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        Contact
+      </a>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section class="about-section">
+    <div class="section-header">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--text-muted)"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <h2>About Me</h2>
+      <div class="line"></div>
+    </div>
+
+    <!-- Stats row -->
+    <div class="highlight-row" style="margin-bottom:24px;">
+      <div class="highlight-item">
+        <div class="highlight-number">12+</div>
+        <div class="highlight-label">Years in Product</div>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-number">10</div>
+        <div class="highlight-label">Years as PM</div>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-number">2</div>
+        <div class="highlight-label">Years as SDE</div>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-number">6+</div>
+        <div class="highlight-label">Industries</div>
+      </div>
+    </div>
+
+    <!-- Background + Beyond PM: 2-column -->
+    <div class="about-grid" style="margin-bottom:24px;">
+      <!-- Background -->
+      <div class="about-card">
+        <div class="about-card-label">Background</div>
+        <p>MBA (Marketing &amp; Systems) from IIM Lucknow — graduated with Honors, top 15% of batch. BTech in Computer Science from Andhra University — top 5 of batch.</p>
+        <p style="margin-top:12px;">Started as an SDE building enterprise trading applications, then transitioned into product management — owning search, growth, and conversion across five companies, currently Group Product Manager at KC Overseas Education (Coursefinder.ai).</p>
+        <p style="margin-top:12px;">Recently launched AI Mock Interviews — a conversational AI product using STT, TTS, and LLM-based evaluation with key-value state mapping, now one of the most successful products at the company. Equally strong in conversion optimisation, SEO, user growth, and go-to-market execution.</p>
+      </div>
+
+      <!-- Beyond PM -->
+      <div class="about-card">
+        <div class="about-card-label">Beyond Product Management</div>
+        <ul class="activity-list">
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            Product marketing — webinars for internal &amp; external stakeholders, product evangelisation, and go-to-market strategy
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            UX research — finding opportunities through client interactions, user interviews, and data analytics
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            Singlehandedly deployed low-code platforms for 800+ member teams — replaced Salesforce, Leadsquared &amp; Zoho
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            Featured in a podcast on AI, studying overseas, emerging job roles &amp; future skills
+            <a href="https://youtu.be/pbg7DZrkUK4?si=tid_ORBMIVOASHDm" target="_blank" rel="noopener noreferrer" class="podcast-link">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              Watch
+            </a>
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            Builds full-stack products from scratch — the projects below are all conceived, designed &amp; coded personally
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Career Path: full-width, single column -->
+    <div class="about-card">
+      <div class="about-card-label">Career Path</div>
+      <div class="career-list">
+        <div class="career-entry">
+          <span class="career-dot" style="background:#6366f1;"></span>
+          <div class="career-info">
+            <div class="career-role">Group Product Manager</div>
+            <div class="career-company-h">KC Overseas Education Ltd (Coursefinder.ai), Hyderabad</div>
+          </div>
+          <div class="career-right">
+            <span class="career-period-h">Dec 2023 – Present</span>
+            <div class="career-tags-row">
+              <span class="career-industry-tag">Ed-tech</span>
+              <span class="career-industry-tag">AI / GenAI</span>
+            </div>
+          </div>
+        </div>
+        <div class="career-entry">
+          <span class="career-dot" style="background:#818cf8;"></span>
+          <div class="career-info">
+            <div class="career-role">Senior Product Manager II</div>
+            <div class="career-company-h">Sixt Research &amp; Development India, Bangalore</div>
+          </div>
+          <div class="career-right">
+            <span class="career-period-h">Dec 2021 – Jul 2023</span>
+            <div class="career-tags-row">
+              <span class="career-industry-tag">Mobility</span>
+              <span class="career-industry-tag">E-commerce</span>
+            </div>
+          </div>
+        </div>
+        <div class="career-entry">
+          <span class="career-dot" style="background:#a78bfa;"></span>
+          <div class="career-info">
+            <div class="career-role">Product Manager III</div>
+            <div class="career-company-h">AJIO (Reliance Group), Bangalore</div>
+          </div>
+          <div class="career-right">
+            <span class="career-period-h">May 2019 – Dec 2021</span>
+            <div class="career-tags-row">
+              <span class="career-industry-tag">E-commerce</span>
+              <span class="career-industry-tag">Ad-tech</span>
+            </div>
+          </div>
+        </div>
+        <div class="career-entry">
+          <span class="career-dot" style="background:#c4b5fd;"></span>
+          <div class="career-info">
+            <div class="career-role">Product Manager</div>
+            <div class="career-company-h">Rivigo Logistics Solutions Ltd, Gurgaon</div>
+          </div>
+          <div class="career-right">
+            <span class="career-period-h">Mar 2018 – May 2019</span>
+            <div class="career-tags-row">
+              <span class="career-industry-tag">Logistics</span>
+              <span class="career-industry-tag">Fintech</span>
+            </div>
+          </div>
+        </div>
+        <div class="career-entry">
+          <span class="career-dot" style="background:#ddd6fe;"></span>
+          <div class="career-info">
+            <div class="career-role">Associate Product Manager</div>
+            <div class="career-company-h">Magicbricks Realty Services Ltd, Noida</div>
+          </div>
+          <div class="career-right">
+            <span class="career-period-h">Apr 2015 – Mar 2018</span>
+            <div class="career-tags-row">
+              <span class="career-industry-tag">Real Estate</span>
+              <span class="career-industry-tag">Classifieds</span>
+            </div>
+          </div>
+        </div>
+        <div class="career-entry">
+          <span class="career-dot" style="background:#ede9fe;"></span>
+          <div class="career-info">
+            <div class="career-role">Senior Software Engineer</div>
+            <div class="career-company-h">Headstrong (now Mphasis), Bangalore</div>
+          </div>
+          <div class="career-right">
+            <span class="career-period-h">Jun 2011 – Jun 2013</span>
+            <div class="career-tags-row">
+              <span class="career-industry-tag">Fintech</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="skills-section">
+    <div class="section-header">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--text-muted)"><path d="M12 2v4"/><path d="m15.5 7.5 2.5-2.5"/><path d="M18 12h4"/><path d="m15.5 16.5 2.5 2.5"/><path d="M12 18v4"/><path d="m4.9 19.1 2.5-2.5"/><path d="M2 12h4"/><path d="m4.9 4.9 2.5 2.5"/></svg>
+      <h2>Skills</h2>
+      <div class="line"></div>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-category">
+        <div class="skill-category-label">AI &amp; Machine Learning</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Conversational AI (STT, TTS, State Machines)</span>
+          <span class="skill-tag">LLM Text Completion &amp; Evaluation</span>
+          <span class="skill-tag">Prompt Engineering</span>
+          <span class="skill-tag">RAG Pipelines (Vector DBs)</span>
+          <span class="skill-tag">NLP &amp; Intent Classification</span>
+          <span class="skill-tag">Recommender Systems</span>
+          <span class="skill-tag">Agentic AI Workflows</span>
+          <span class="skill-tag">Document OCR</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-category-label">Product Strategy &amp; Leadership</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Product Vision &amp; Roadmap</span>
+          <span class="skill-tag">Technical Product Management</span>
+          <span class="skill-tag">Stakeholder Management</span>
+          <span class="skill-tag">Product Team Leadership</span>
+          <span class="skill-tag">Competitive Analysis</span>
+          <span class="skill-tag">Agile &amp; Sprint Planning</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-category-label">Growth &amp; Monetisation</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Conversion Optimisation (CRO)</span>
+          <span class="skill-tag">SEO &amp; E-commerce SEO</span>
+          <span class="skill-tag">User Acquisition &amp; Retention</span>
+          <span class="skill-tag">Loyalty &amp; Referral Programs</span>
+          <span class="skill-tag">GTM Strategy</span>
+          <span class="skill-tag">Funnel Analysis</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-category-label">Tools &amp; Engineering</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">JavaScript / Node.js</span>
+          <span class="skill-tag">React / Next.js</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">Google Analytics</span>
+          <span class="skill-tag">Mixpanel</span>
+          <span class="skill-tag">Frappe (Low-Code)</span>
+        </div>
+        <div class="cert-tags" style="margin-top:12px;">
+          <span class="cert-tag">ML &amp; AI Recommenders</span>
+          <span class="cert-tag">AI-First Product Leader</span>
+          <span class="cert-tag">NLP</span>
+          <span class="cert-tag">SEO</span>
+          <span class="cert-tag">GA Advanced</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="projects">
+    <div class="section-header">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--text-muted)"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>
+      <h2>Products I've Built</h2>
+      <div class="line"></div>
+    </div>
+
+    <div class="project-grid">
+
+      <!-- GlintPost -->
+      <div class="card" data-color="indigo">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="card-icon">&#x1F4E2;</span>
+            <div>
+              <div class="card-name">GlintPost</div>
+              <div class="card-tagline">Open-source product changelog &amp; roadmap widget</div>
+            </div>
+          </div>
+          <a href="https://glintpost.com" target="_blank" rel="noopener noreferrer" class="live-badge">
+            Live
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+        </div>
+        <p class="card-desc">A B2B SaaS tool that helps product teams communicate updates and collect feedback. Features embeddable changelog and roadmap widgets, AI-powered duplicate detection for feature suggestions, multi-locale support, and visitor analytics.</p>
+        <div class="features">
+          <div class="card-section-label">Key Features</div>
+          <div class="feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>Embeddable changelog &amp; roadmap widgets</div>
+          <div class="feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>AI-powered duplicate suggestion detection</div>
+          <div class="feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>Targeted content delivery by user attributes</div>
+          <div class="feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>Multi-locale support (8+ languages)</div>
+          <div class="feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>Engagement analytics &amp; visitor tracking</div>
+        </div>
+        <div>
+          <div class="card-section-label">Tech Stack</div>
+          <div class="tech-tags">
+            <span class="tech-tag">Next.js</span><span class="tech-tag">React</span><span class="tech-tag">TypeScript</span><span class="tech-tag">Prisma</span><span class="tech-tag">PostgreSQL</span><span class="tech-tag">Vercel AI SDK</span><span class="tech-tag">AWS S3</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- TruKeys -->
+      <div class="card" data-color="emerald">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="card-icon">&#x1F3E0;</span>
+            <div>
+              <div class="card-name">TruKeys</div>
+              <div class="card-tagline">India's most trusted home buying platform</div>
+            </div>
+          </div>
+          <a href="https://trukeys.com" target="_blank" rel="noopener noreferrer" class="live-badge">
+            Live
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+        </div>
+        <p class="card-desc">A real estate platform focused on transparent home buying. Provides unbiased builder insights, connects real buyers, and enables informed property decisions — all without spam calls. Includes a community-driven feature voting system.</p>
+        <div class="features">
+          <div class="card-section-label">Key Features</div>
+          <div class="feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>Transparent builder insights &amp; reviews</div>
+          <div class="feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>Community feature voting &amp; suggestions</div>
+          <div class="feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>Social authentication with Supabase</div>
+          <div class="feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>GDPR-compliant data handling</div>
+          <div class="feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>Newsletter &amp; engagement tools</div>
+        </div>
+        <div>
+          <div class="card-section-label">Tech Stack</div>
+          <div class="tech-tags">
+            <span class="tech-tag">Next.js</span><span class="tech-tag">React</span><span class="tech-tag">TypeScript</span><span class="tech-tag">Supabase</span><span class="tech-tag">Tailwind CSS</span><span class="tech-tag">Radix UI</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- AgentLane CRM -->
+      <div class="card" data-color="amber">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="card-icon">&#x1F393;</span>
+            <div>
+              <div class="card-name">AgentLane CRM</div>
+              <div class="card-tagline">Modern CRM for overseas education consultants</div>
+            </div>
+          </div>
+          <a href="https://agentlane-fe.onrender.com" target="_blank" rel="noopener noreferrer" class="live-badge">
+            Live
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+        </div>
+        <p class="card-desc">A purpose-built CRM with dual pipeline management for leads and students. Features a visual rule builder for workflow automation, drag-and-drop task management, and a guided 6-step onboarding wizard.</p>
+        <div class="features">
+          <div class="card-section-label">Key Features</div>
+          <div class="feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>Dual kanban boards for leads &amp; students</div>
+          <div class="feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>Visual automation rule builder</div>
+          <div class="feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>Drag-and-drop task management</div>
+          <div class="feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>Marketing campaigns &amp; form builder</div>
+          <div class="feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>Role-based team collaboration</div>
+        </div>
+        <div>
+          <div class="card-section-label">Tech Stack</div>
+          <div class="tech-tags">
+            <span class="tech-tag">React</span><span class="tech-tag">TypeScript</span><span class="tech-tag">TanStack Query</span><span class="tech-tag">Vite</span><span class="tech-tag">Tailwind CSS</span>
+          </div>
+        </div>
+        <div class="demo-creds">
+          <div class="demo-creds-label">Try it out</div>
+          Email: <code>admin@agentlane.com</code> &nbsp; Password: <code>admin123</code>
+        </div>
+      </div>
+
+      <!-- Floorplanner -->
+      <div class="card" data-color="blue">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="card-icon">&#x1F4D0;</span>
+            <div>
+              <div class="card-name">Floorplanner</div>
+              <div class="card-tagline">AI-powered floor plan editor with OCR</div>
+            </div>
+          </div>
+        </div>
+        <p class="card-desc">An intelligent floor plan editor that uses AI to extract room dimensions from uploaded images. Features a visual canvas with drag-and-drop room arrangement, smart layout suggestions, and real-time metrics.</p>
+        <div class="features">
+          <div class="card-section-label">Key Features</div>
+          <div class="feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>AI-powered OCR room extraction</div>
+          <div class="feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>Interactive drag-and-drop canvas</div>
+          <div class="feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>Smart layout suggestions &amp; gap detection</div>
+          <div class="feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>Real-time area &amp; metrics calculation</div>
+          <div class="feature-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>Grid snapping &amp; alignment tools</div>
+        </div>
+        <div>
+          <div class="card-section-label">Tech Stack</div>
+          <div class="tech-tags">
+            <span class="tech-tag">Next.js</span><span class="tech-tag">TypeScript</span><span class="tech-tag">Konva.js</span><span class="tech-tag">Sarvam AI</span><span class="tech-tag">Supabase</span><span class="tech-tag">Tesseract.js</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span>Srikanth Sharma &mdash; IIM Lucknow &middot; 12+ yrs in Product</span>
+      <span>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+        Always building
+      </span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
