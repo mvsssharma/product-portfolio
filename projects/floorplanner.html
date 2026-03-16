@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Floorplanner — Product Detail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0a0a0b;
+      --surface: rgba(255,255,255,0.03);
+      --surface-hover: rgba(255,255,255,0.05);
+      --border: rgba(255,255,255,0.06);
+      --border-hover: rgba(255,255,255,0.12);
+      --text: #ffffff;
+      --text-secondary: #a1a1aa;
+      --text-muted: #71717a;
+      --text-dim: #52525b;
+      --accent: #3b82f6;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+    .glow {
+      position: fixed;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 600px;
+      background: radial-gradient(ellipse, rgba(59,130,246,0.07) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+    header { padding: 60px 0 40px; }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      margin-bottom: 32px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--text); }
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      background: linear-gradient(to bottom, #fff, #a1a1aa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+    }
+    .tagline {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+    .project-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+    
+    section { margin-bottom: 48px; }
+    h2 {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    h2::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    
+    .content-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+    }
+    .decision-item { margin-bottom: 24px; }
+    .decision-item:last-child { margin-bottom: 0; }
+    .decision-title {
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .decision-desc {
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+    
+    .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .tech-tag {
+      font-size: 13px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.05);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+    }
+    
+    footer { border-top: 1px solid var(--border); padding: 40px 0; text-align: center; color: var(--text-dim); font-size: 14px; }
+    
+    @media (max-width: 600px) {
+      header { padding: 40px 0 30px; }
+      .content-card { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="glow"></div>
+  <div class="container">
+    <header>
+      <a href="../index.html" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        Back to Portfolio
+      </a>
+      <h1>Floorplanner</h1>
+      <p class="tagline">AI-powered floor plan editor with OCR</p>
+    </header>
+
+    <section>
+      <h2>Product Overview</h2>
+      <div class="content-card">
+        <p class="decision-desc">Floorplanner is an intelligent web application designed for property administrators to convert static floor plan images into interactive, editable digital layouts. By combining browser-based computer vision (OCR) with a sophisticated 2D canvas editor, it eliminates the manual data entry typically required to catalog room dimensions and facility area metrics.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Major Product Decisions</h2>
+      <div class="content-card">
+        <div class="decision-item">
+          <div class="decision-title">Vision AI for Instant Room Extraction</div>
+          <p class="decision-desc">Instead of forcing users to draw every room from scratch, I integrated Sarvam AI's vision models. Users simply upload a floor plan image, and the system automatically identifies rooms, labels, and dimensions, populating a "Room Palette" for quick placement.</p>
+        </div>
+        <div class="decision-item">
+          <div class="decision-title">Interactive Canvas with Real-Time Metrics</div>
+          <p class="decision-desc">I decided to build the editor using Konva.js to ensure high-performance interactions like drag-and-drop and grid snapping. Crucially, the system calculates area metrics in real-time, providing instant feedback on total square footage as rooms are rearranged.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Market Differentiation</h2>
+      <div class="content-card">
+        <div class="decision-item">
+          <div class="decision-title">Extreme Ease of Use for Non-Architects</div>
+          <p class="decision-desc">Most floor planning software (like CAD or specialized architectural tools) has a steep learning curve. Floorplanner is designed for property admins and real estate agents who need quick, professional layouts without technical training.</p>
+        </div>
+        <div class="decision-item">
+          <div class="decision-title">Smart Gap & Overlap Detection</div>
+          <p class="decision-desc">Unlike generic drawing tools, Floorplanner understands the "logic" of a floor plan. It features intelligent gap detection to ensure rooms are perfectly aligned and provides suggestions for optimal layout density.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Key Features</h2>
+      <div class="content-card">
+        <ul style="list-style: none; color: var(--text-secondary); font-size: 15px;">
+          <li style="margin-bottom: 12px; display: flex; gap: 10px;"><span style="color: var(--accent);">•</span> AI-powered OCR room extraction</li>
+          <li style="margin-bottom: 12px; display: flex; gap: 10px;"><span style="color: var(--accent);">•</span> Interactive drag-and-drop canvas</li>
+          <li style="margin-bottom: 12px; display: flex; gap: 10px;"><span style="color: var(--accent);">•</span> Smart layout suggestions &amp; gap detection</li>
+          <li style="margin-bottom: 12px; display: flex; gap: 10px;"><span style="color: var(--accent);">•</span> Real-time area &amp; metrics calculation</li>
+          <li style="display: flex; gap: 10px;"><span style="color: var(--accent);">•</span> Grid snapping &amp; alignment tools</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Tech Stack</h2>
+      <div class="tech-tags">
+        <span class="tech-tag">Next.js</span>
+        <span class="tech-tag">TypeScript</span>
+        <span class="tech-tag">Konva.js</span>
+        <span class="tech-tag">Sarvam AI</span>
+        <span class="tech-tag">Supabase</span>
+        <span class="tech-tag">Tesseract.js</span>
+      </div>
+    </section>
+
+    <footer>
+      Srikanth Sharma &mdash; AI-Native Product Leader
+    </footer>
+  </div>
+</body>
+</html>
