@@ -17,7 +17,7 @@ AI-native Product Leader with 12+ years shipping B2C & B2B products across E-com
 | Product Manager III | AJIO (Reliance Group), Bangalore | E-commerce, Ad-tech | May 2019 – Dec 2021 |
 | Product Manager | Rivigo Logistics, Gurgaon | Logistics, Fintech | Mar 2018 – May 2019 |
 | Associate Product Manager | Magicbricks, Noida | Real Estate, Classifieds | Apr 2015 – Mar 2018 |
-| Senior Software Engineer | Headstrong (now Mphasis), Bangalore | Fintech | Jun 2011 – Jun 2013 |
+| Senior Software Engineer | Headstrong Services Limited, Bangalore | Fintech | Jun 2011 – Jun 2013 |
 
 ---
 
