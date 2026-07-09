@@ -155,6 +155,14 @@
       color: var(--text-secondary);
       font-size: 15px;
     }
+    .decision-desc code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13px;
+      padding: 2px 6px;
+      border-radius: 5px;
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+    }
     
     .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
     .tech-tag {
@@ -183,7 +191,7 @@
         Back to Portfolio
       </a>
       <h1>GlintPost</h1>
-      <p class="tagline">Open-source product changelog &amp; roadmap widget</p>
+      <p class="tagline">Open-source changelog, roadmap &amp; feedback widgets</p>
       <div class="project-meta">
         <a href="https://glintpost.com" target="_blank" rel="noopener noreferrer" class="live-link">
           <span class="status-dot"></span>
@@ -196,7 +204,7 @@
     <section>
       <h2>Product Overview</h2>
       <div class="content-card">
-        <p class="decision-desc">GlintPost is a B2B SaaS tool designed to bridge the communication gap between product teams and their users. It provides lightweight, embeddable widgets for changelogs and roadmaps, allowing companies to showcase their progress and collect feature requests directly within their own applications. By focusing on "Product Marketing," GlintPost helps teams turn every update into an engagement opportunity.</p>
+        <p class="decision-desc">GlintPost is a product marketing platform that bridges the communication gap between product teams and their users. It provides lightweight, embeddable widgets for changelogs, roadmap voting, and feedback that drop into any site with a simple script tag — so teams can showcase what they shipped, let users vote on what's next, and collect context-rich feedback without sending anyone off to a separate portal. It's open-source and self-hostable via a single Docker command, while the same codebase also powers a multi-tenant cloud SaaS through runtime feature flags.</p>
       </div>
     </section>
 
@@ -204,12 +212,16 @@
       <h2>Major Product Decisions</h2>
       <div class="content-card">
         <div class="decision-item">
-          <div class="decision-title">Embeddable Widgets vs. Standalone Portals</div>
-          <p class="decision-desc">Instead of forcing users to visit a separate subdomain, I decided to prioritize an "embed-first" strategy. This keeps the user within the product context, significantly increasing the visibility of updates and the likelihood of feedback collection.</p>
+          <div class="decision-title">Embed-First vs. Standalone Portals</div>
+          <p class="decision-desc">Instead of forcing users to visit a separate subdomain, I prioritized an "embed-first" strategy across all three widgets. Five embed modes — slideover, inline, tab, hosted, and headless — mean a team can surface updates wherever it makes sense, keeping users in the product context and increasing both visibility and feedback rates.</p>
         </div>
         <div class="decision-item">
-          <div class="decision-title">AI-First Feedback Management</div>
-          <p class="decision-desc">Traditional roadmaps often suffer from "feedback noise"—dozens of duplicate suggestions. I integrated an AI-powered duplicate detection system that proactively identifies and merges similar feature requests, saving hours of manual moderation.</p>
+          <div class="decision-title">Open-Source First, Cloud Optional</div>
+          <p class="decision-desc">GlintPost ships as a single codebase that powers two environments through 12-factor feature flags. Self-hosters run a frictionless "single-player" mode — one <code>docker compose up</code>, email verification and billing flipped off, password resets falling back to console logs, no third-party API keys required. The same build, with flags on, runs as a multi-tenant cloud SaaS on Vercel with enforced verification and billing.</p>
+        </div>
+        <div class="decision-item">
+          <div class="decision-title">BYO AI Keys, Encrypted at Rest</div>
+          <p class="decision-desc">Rather than bake in a single AI vendor and eat the token costs, users bring their own keys for OpenAI, Anthropic, or Google. Keys are encrypted at rest with AES-256-GCM. This powers changelog writing assistance and auto-translation while keeping AI spend fully in the customer's control.</p>
         </div>
       </div>
     </section>
@@ -218,12 +230,12 @@
       <h2>Market Differentiation</h2>
       <div class="content-card">
         <div class="decision-item">
-          <div class="decision-title">Targeted Change Delivery</div>
-          <p class="decision-desc">Unlike generic changelogs (e.g., Beamer, Headway), GlintPost allows for content delivery based on specific visitor attributes. This means beta features can be shown only to beta testers, and enterprise-specific updates only to enterprise users.</p>
+          <div class="decision-title">Datalayer-Native Targeting</div>
+          <p class="decision-desc">Competitors like Canny, Beamer, AnnounceKit, and Featurebase build walled gardens — their own user tracking, their own segment builders, their own analytics silos. GlintPost takes the opposite approach: customers pass their existing GTM/datalayer variables directly, so targeting works with the data they already have. Beta features can be shown only to beta testers, enterprise updates only to enterprise users — with zero new segmentation config.</p>
         </div>
         <div class="decision-item">
-          <div class="decision-title">Deep Visitor Analytics</div>
-          <p class="decision-desc">Most competitors offer basic view counts. GlintPost tracks deep engagement metrics, showing exactly which user segments find specific features most interesting, enabling data-driven product marketing.</p>
+          <div class="decision-title">True GTM Compatibility</div>
+          <p class="decision-desc">The widgets are plain <code>&lt;script&gt;</code> tags with <code>data-</code> attributes, designed to drop into a Google Tag Manager Custom HTML tag trivially — not bolted on as an afterthought. Combined with flat, no-per-seat pricing, GlintPost undercuts the tracked-user billing traps and per-seat add-ons that inflate competitor costs at scale.</p>
         </div>
       </div>
     </section>
@@ -232,11 +244,12 @@
       <h2>Key Features</h2>
       <div class="content-card">
         <ul style="list-style: none; color: var(--text-secondary); font-size: 15px;">
-          <li style="margin-bottom: 12px; display: flex; gap: 10px;"><span style="color: var(--accent);">•</span> Embeddable changelog & roadmap widgets</li>
-          <li style="margin-bottom: 12px; display: flex; gap: 10px;"><span style="color: var(--accent);">•</span> AI-powered duplicate suggestion detection</li>
-          <li style="margin-bottom: 12px; display: flex; gap: 10px;"><span style="color: var(--accent);">•</span> Targeted content delivery by user attributes</li>
-          <li style="margin-bottom: 12px; display: flex; gap: 10px;"><span style="color: var(--accent);">•</span> Multi-locale support (8+ languages)</li>
-          <li style="display: flex; gap: 10px;"><span style="color: var(--accent);">•</span> Engagement analytics & visitor tracking</li>
+          <li style="margin-bottom: 12px; display: flex; gap: 10px;"><span style="color: var(--accent);">•</span> Changelog, roadmap-voting & feedback widgets</li>
+          <li style="margin-bottom: 12px; display: flex; gap: 10px;"><span style="color: var(--accent);">•</span> 5 embed modes: slideover, inline, tab, hosted, headless</li>
+          <li style="margin-bottom: 12px; display: flex; gap: 10px;"><span style="color: var(--accent);">•</span> Datalayer-native targeting via existing GTM variables</li>
+          <li style="margin-bottom: 12px; display: flex; gap: 10px;"><span style="color: var(--accent);">•</span> AI writing assistance & auto-translation (BYO keys)</li>
+          <li style="margin-bottom: 12px; display: flex; gap: 10px;"><span style="color: var(--accent);">•</span> One-command Docker self-hosting (MIT licensed)</li>
+          <li style="display: flex; gap: 10px;"><span style="color: var(--accent);">•</span> Multi-tenant architecture with per-org data isolation</li>
         </ul>
       </div>
     </section>
@@ -244,13 +257,15 @@
     <section>
       <h2>Tech Stack</h2>
       <div class="tech-tags">
-        <span class="tech-tag">Next.js</span>
-        <span class="tech-tag">React</span>
+        <span class="tech-tag">Next.js 16</span>
+        <span class="tech-tag">React 19</span>
         <span class="tech-tag">TypeScript</span>
-        <span class="tech-tag">Prisma</span>
+        <span class="tech-tag">Prisma 7</span>
         <span class="tech-tag">PostgreSQL</span>
-        <span class="tech-tag">Vercel AI SDK</span>
-        <span class="tech-tag">AWS S3</span>
+        <span class="tech-tag">NextAuth v5</span>
+        <span class="tech-tag">Docker</span>
+        <span class="tech-tag">S3 / Cloudflare R2</span>
+        <span class="tech-tag">Zod</span>
       </div>
     </section>
 
